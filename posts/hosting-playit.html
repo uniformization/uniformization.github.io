@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>test - ts's blog</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/gist/dark-mode.css" />
+  <link rel="stylesheet" href="../assets/css/gist/addon.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="container-top">
+      <div class="title">
+        <h1>ts's blog</h1>
+        <span class="cursor"></span>
+      </div>
+      <div class="container-links">
+        <a href="../index.html">home</a>
+        <a href="../posts.html">posts</a>
+        <!--<a href="./thoughts.html">thoughts</a>-->
+        <a href="../about-me.html">about me</a>
+      </div>
+    </div>
+    <hr class="container-divider-top">
+    <div class="container-main">
+      <h2><span class="highlight">hosting a minecraft server with playit</span></h2>
+      <p>Nowadays, self-hosting your own Minecraft server might be more optimal than purchasing a server. The main benefits are that it's free and you have full control of your server. However, self-hosting can be a confusing and complicated setup which is why I wrote this post.</p>
+
+      <h3><i>The Setup</i></h3>
+      <p>Create a dedicated folder (aka, the <b>root folder</b>) for your server, it can be located anywhere. I named this folder <code>playit-server</code>.</p>
+      <p>Create a folder inside the root folder for the server (aka, the <b>server folder</b>). I named this folder <code>server</code>.</p>
+
+      <h3><i>Downloading the JRE (Java)</i></h3>
+      <p>I recommend using Eclipse Temurin to run your Minecraft server since it receives a lot of support. You can download the ZIP file here (make sure not to download the JDK, only download the JRE): <a target="_blank" href="https://adoptium.net/temurin/releases/">https://adoptium.net/temurin/releases/</a></p>
+      <p>Open the ZIP file and extract the folder to your root folder.</p>
+      
+      <h3><i>Downloading the Server JAR</i></h3>
+      <p>Head to the Minecraft Launcher > Installations > New Installation.</p>
+      <p>Select the desired version and click the download icon for the server.</p>
+
+      <img src="../assets/img/posts/hosting-playit/server-jar.png" />
+
+      <p>Move the <code>server.jar</code> file into the server folder.</p>
+
+      <h3><i>The Batch File</i></h3>
+      <p>In order to actually start the server, you will need to create a batch file to do so.</p>
+      <p>Head to the server directory, create a file called <code>run.bat</code> and open the file in Notepad. Copy and paste the code below into Notepad.</p>
+      <script src="https://gist.github.com/uniformization/6a7cee18fff9f641edc3a838a48666d3.js"></script>
+      <p>There are a couple parts you may want to modify, the path of the Java folder and the amount of RAM you want to use for the server.</p>
+      <p>To correct the path to the Java folder, you need to replace the placeholder in line 3. Since the batch file is being run from the server directory, put <code>..\JAVA_FOLDER_NAME</code> but replace <code>JAVA_FOLDER_NAME</code> with the name of the java directory.
+      <p>To modify the amount of memory the server has, change line 9 and 10 to be any size you would like. For example, if you would like to use 6GB of RAM, use <code>-Xms6G</code> and <code>-Xmx6G</code>.</p>
+
+      <div style="width: 800px" class="captioned-image">
+        <img src="../assets/img/posts/hosting-playit/layout.png" />
+        <i><small>The current file layout</small></i>
+      </div>
+
+      <h3><i>playit.gg Setup</i></h3>
+      <p>Visit <a target="_blank" href="https://playit.gg/download">https://playit.gg/download</a> and run the installer, then run the playit application.</p>
+      <img src="../assets/img/posts/hosting-playit/search.png" />
+
+      <p>You will be prompted to visit the setup link, put the link in the browser and click <i>Continue</i>.</p>
+      <img src="../assets/img/posts/hosting-playit/claim.png" />
+      <br>
+      <img src="../assets/img/posts/hosting-playit/add-agent.png" />
+
+      <p>Give it any name and make sure it's an <i>Assignable Agent</i>. Click <i>Add Agent</i>.</p>
+
+      <img src="../assets/img/posts/hosting-playit/add-agent-2.png" />
+
+      <p>Click <i>Create Tunnel</i> and set the Tunnel Type to <i>Minecraft Java (game)</i> and click <i>Add Tunnel</i>.</p>
+      <p>Take note of the public IP address. Other players will use this to connect to your server.</p>
+      
+      <img src="../assets/img/posts/hosting-playit/playit-ip.png" />
+
+      <h3><i>Testing the server</i></h3>
+      <p>Head to your server folder and double-click the <code>run.bat</code> file. Wait a few seconds and the server will close, you will need to edit the <code>eula.txt</code> file.</p>
+      <p>Open the <code>eula.txt</code> file in Notepad and replace <code>false</code> with <code>true</code>.</p>
+      <img src="../assets/img/posts/hosting-playit/eula.png" />
+      <p>Try double-clicking the <code>run.bat</code> file and the server should start.</p>
+      
+      <h3><i>Running the server</i></h3>
+      <p>If you restarted your computer, start by opening the playit application.</p>
+      <p>After opening playit, head to the server folder and run the <code>run.bat</code> file.</p>
+      <p>You can connect to the server by using <code>localhost</code> or the IP provided on the playit site.</p>
+    </div>
+    <!--<div class="footer">
+      made with ❤️ by ts
+    </div>-->
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.gist .gist-file {
+  border: max(1px, 0.0625rem) solid #30363d !important;
+  border-radius: 0.375rem !important;
+}
+
+.gist .gist-data {
+  background-color: #1f2328 !important;
+  border-top-left-radius: 0.375rem !important;
+  border-top-right-radius: 0.375rem !important;
+}
+
+.gist .gist-meta {
+  border-bottom-left-radius: 0.375rem !important;
+  border-bottom-right-radius: 0.375rem !important;
+}
+
+.gist .gist-meta a {
+  color: #b8b8b8 !important;
+}
