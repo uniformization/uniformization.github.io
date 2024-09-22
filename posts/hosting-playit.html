@@ -50,7 +50,7 @@
       <h3><i>The Batch File</i></h3>
       <p>In order to actually start the server, you will need to create a batch file to do so.</p>
       <p>Head to the server directory, create a file called <code>run.bat</code> and open the file in Notepad. Copy and paste the code below into Notepad.</p>
-      <script src="https://gist.github.com/uniformization/6a7cee18fff9f641edc3a838a48666d3.js"></script>
+      <span id="gist-batch-file"></span>
       <p>There are a couple parts you may want to modify, the path of the Java folder and the amount of RAM you want to use for the server.</p>
       <p>To correct the path to the Java folder, you need to replace the placeholder in line 3. Since the batch file is being run from the server directory, put <code>..\JAVA_FOLDER_NAME</code> but replace <code>JAVA_FOLDER_NAME</code> with the name of the java directory.
       <p>To modify the amount of memory the server has, change line 9 and 10 to be any size you would like. For example, if you would like to use 6GB of RAM, use <code>-Xms6G</code> and <code>-Xmx6G</code>.</p>
@@ -93,5 +93,16 @@
       made with ❤️ by ts
     </div>-->
   </div>
+
+  <script>
+    const injections = [
+      {
+        id: 'gist-batch-file',
+        src: 'https://gist.github.com/uniformization/6a7cee18fff9f641edc3a838a48666d3.json',
+      },
+    ];
+  </script>
+  <script src="../assets/js/third_party/fetch-jsonp.min.js"></script>
+  <script src="../assets/js/gist_injection.js"></script>
 </body>
 </html>
